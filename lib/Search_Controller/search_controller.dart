@@ -6,30 +6,26 @@ import 'package:speech_to_text/speech_to_text.dart';
 class SpeechController extends GetxController {
 
   SpeechToText speechToText = SpeechToText();
+  final searchController = TextEditingController();
+  FocusNode searchFocus = FocusNode();
+
+
   RxString _lastWords = ''.obs;
   RxBool _hasNotSpoken = false.obs;
   RxBool _isListening = false.obs;
+  RxString _speechText = ''.obs;
+  RxBool _speechEnabled = false.obs;
+  RxBool isVisible = false.obs;
 
   bool get hasNotSpoken => _hasNotSpoken.value;
 
   bool get isListening => _isListening.value;
 
-  // RxBool isListeningEnabled = false.obs;
-
   String get lastWord => _lastWords.value;
-
-  RxString _speechText = ''.obs;
 
   String get speechText => _speechText.value;
 
-  RxBool _speechEnabled = false.obs;
-
   bool get speechEnabled => _speechEnabled.value;
-
-  RxBool isVisible = false.obs;
-
-  final searchController = TextEditingController();
-  FocusNode searchFocus = FocusNode();
 
   void reset() {
     _hasNotSpoken.value = false;
