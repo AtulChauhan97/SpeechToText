@@ -48,57 +48,6 @@ class _SearchViewBYSpeechState extends State<SearchViewBYSpeech> {
     );
   }
 
-  /*Future<void> buildDialog() {
-    return Get.dialog(
-      Dialog(
-        shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        backgroundColor: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Obx(
-            () => SizedBox(
-              height: 300,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('Google'),
-                  AvatarGlow(
-                    endRadius: 70,
-                    glowColor: Colors.blue,
-                    duration: const Duration(milliseconds: 2000),
-                    repeatPauseDuration: const Duration(milliseconds: 100),
-                    repeat: true,
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 80,
-                      width: 80,
-                      decoration: BoxDecoration(
-                          color: Colors.blue.shade900,
-                          borderRadius: BorderRadius.circular(40)),
-                      child: const Icon(
-                        Icons.mic,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    controller.speechText.value,
-                    maxLines: 5,
-                  ),
-                  const Text('English(India)')
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }*/
 
   Widget searchField() {
     return Padding(
@@ -129,6 +78,7 @@ class _SearchViewBYSpeechState extends State<SearchViewBYSpeech> {
       ),
     );
   }
+
 
   Future<void> buildVoiceDialog(Size size) {
     return Get.dialog(

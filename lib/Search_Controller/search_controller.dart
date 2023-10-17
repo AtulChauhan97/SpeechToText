@@ -94,34 +94,4 @@ class SpeechController extends GetxController {
 
 
 
-  // TextEditingController textController = TextEditingController();
-  //
-  // SpeechToText speechToText = SpeechToText();
-  // RxString speechText = "say something".obs;
-  //
-  // void initSpeech() async {
-  //   await speechToText.initialize( );
-  //   startListening();
-  // }
-  //
-  // void startListening() async {
-  //   debugPrint("start listening..... ${speechToText.isListening}");
-  //   await speechToText.listen(onResult: _onSpeechResult);
-  // }
-  //
-  // void stopListening() async {
-  //   debugPrint('stop listening....${speechToText.isNotListening}');
-  //   await speechToText.stop();
-  // }
-  //
-  // void _onSpeechResult(result) {
-  //   var t = result.recognizedWords;
-  //   debugPrint('status not:: ${speechToText.isNotListening}');
-  //   debugPrint('status yes:: ${speechToText.isListening}');
-  //   debugPrint('text $t');
-  //   speechText.value = t;
-  //   textController.text = t;
-  //
-  //   debugPrint('speech result: $t');
-  // }
 }
