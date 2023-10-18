@@ -50,33 +50,34 @@ class _SearchViewBYSpeechState extends State<SearchViewBYSpeech> {
 
 
   Widget searchField() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 18.0, bottom: 18),
-      child: TextField(
-        controller: controller.searchController,
-        cursorColor: Colors.white,
-        decoration: InputDecoration(
-          hintText: "search",
-          prefixIcon: const Icon(
-            Icons.search,
-            size: 25,
-            color: Colors.white,
-          ),
-          fillColor: Colors.blue.shade400,
-          filled: true,
-          contentPadding: const EdgeInsets.fromLTRB(0, 6, 0, 6),
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.zero,
-              borderSide: BorderSide(color: Colors.blue.shade400)),
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.zero,
-              borderSide: BorderSide(color: Colors.blue.shade400)),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.zero,
-              borderSide: BorderSide(color: Colors.blue.shade400)),
+    return Obx(() =>  TextField(
+      controller: controller.searchController,
+      cursorColor: Colors.white,
+      decoration: InputDecoration(
+        hintText: "Search",
+        prefixIcon: const Icon(
+          Icons.search,
+          size: 25,
+          color: Colors.white,
         ),
+        suffixIcon: controller.showCloseButton.value?IconButton(onPressed: (){
+          controller.searchController.clear();
+          controller.showCloseButton.value = false;
+        }, icon: Icon(Icons.close,color: Colors.white,)):SizedBox(),
+        fillColor: Colors.blue.shade400,
+        filled: true,
+        contentPadding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.zero,
+            borderSide: BorderSide(color: Colors.blue.shade400)),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.zero,
+            borderSide: BorderSide(color: Colors.blue.shade400)),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.zero,
+            borderSide: BorderSide(color: Colors.blue.shade400)),
       ),
-    );
+    ),);
   }
 
 

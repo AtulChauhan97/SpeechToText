@@ -16,6 +16,7 @@ class SpeechController extends GetxController {
   RxString _speechText = ''.obs;
   RxBool _speechEnabled = false.obs;
   RxBool isVisible = false.obs;
+  RxBool showCloseButton = false.obs;
 
   bool get hasNotSpoken => _hasNotSpoken.value;
 
@@ -85,6 +86,7 @@ class SpeechController extends GetxController {
 
   void stopListening() async {
     speechToText.stop();
+    showCloseButton.value = true;
   }
 
 
